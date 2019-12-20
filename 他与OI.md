@@ -5,12 +5,12 @@ categories:
   - [OI]
   - [infi]
 tags: [OI, infi, 随笔]
- music: 
-   - enable: true
-     color: '#000'
-     server: netease
-     type: song
-     id: 16957743
+music: 
+  - enable: true
+    color: '#000'
+    server: netease
+    type: song
+    id: 16957743
 ---
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=16957743&auto=1&height=66"></iframe>
