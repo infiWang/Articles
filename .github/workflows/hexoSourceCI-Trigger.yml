@@ -1,0 +1,20 @@
+name: HexoBlogFiles CI Trigger
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Send Repository Dispatch, Trigger HexoBlogFiles CI
+      uses: peter-evans/repository-dispatch@v1.0.0
+      with: 
+        token: ${{ secrets.actionGithubRepoDispatchToken }}
+        repository: infiWang/HexoBlogSource
+        event-type: updatedPosts
