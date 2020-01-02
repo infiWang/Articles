@@ -15,6 +15,6 @@ jobs:
     - name: Send Repository Dispatch, Trigger HexoBlogFiles CI
       uses: peter-evans/repository-dispatch@v1.0.0
       with: 
-        token: ${{ secrets.actionGithubRepoDispatchToken }}
+        token: ${{ secrets.actionHexoCiGithubRepoDispatchToken }}
         repository: infiWang/HexoBlogSource
         event-type: updatedPosts
