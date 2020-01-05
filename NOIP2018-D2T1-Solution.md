@@ -223,7 +223,7 @@ int main()
   return 0;
 }
 ```
-![TLE](https://infi.wang/ContentStorage/pic/Blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
+![TLE](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
