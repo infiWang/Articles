@@ -4,7 +4,7 @@ date: 2019-11-12 20:33:42
 categories: 
   - [OI]
   - [算法]
-tags: [OI, 算法]
+tags: [OI, 算法, NOIP, 搜索, DFS, BFS, 剪枝, 图论, 树论]
 ---
 
 去年因为这题考虑多了60变20, 1=变2=, 省队变差8分, 草(砸电脑.gif
@@ -223,7 +223,7 @@ int main()
   return 0;
 }
 ```
-![TLE](https://infi.wang/ContentStorage/pic/Blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
+![TLE](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 

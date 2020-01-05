@@ -30,7 +30,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/Blog/他与OI/dadsExCompany.jpg "父亲的前公司")
+![](https://infi.wang/ContentStorage/pic/blog/他与OI/dadsExCompany.jpg "父亲的前公司")
 
 </fancybox>
 
@@ -38,7 +38,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/Blog/他与OI/YUSS-Grade2016Class6.jpg "他的在的六班")
+![](https://infi.wang/ContentStorage/pic/blog/他与OI/YUSS-Grade2016Class6.jpg "他的在的六班")
 
 </fancybox>
 
@@ -56,7 +56,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/Blog/他与OI/highschoolEntranceExamScoreInform-Blured.png "他的中考成绩单")
+![](https://infi.wang/ContentStorage/pic/blog/他与OI/highschoolEntranceExamScoreInform-Blured.png "他的中考成绩单")
 
 </fancybox>
 
@@ -88,7 +88,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/Blog/他与OI/infi'sLuoguStat-19-12-03.png "infiWang的洛谷状态, 2019.12.03")
+![](https://infi.wang/ContentStorage/pic/blog/他与OI/infi'sLuoguStat-19-12-03.png "infiWang的洛谷状态, 2019.12.03")
 
 </fancybox>
 
@@ -102,7 +102,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/Blog/他与OI/infiWangAndSF.jpg)
+![](https://infi.wang/ContentStorage/pic/blog/他与OI/infiWangAndSF.jpg)
 我和SF, 摄于和成国际. 拍完这张照片后我回学校溜达了一阵
 
 </fancybox>
