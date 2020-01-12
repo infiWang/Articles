@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
     - name: Send Repository Dispatch, Trigger HexoBlogFiles CI
       uses: peter-evans/repository-dispatch@v1.0.0
       with: 
