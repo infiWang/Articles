@@ -4,7 +4,7 @@ date: 2019-11-12 20:33:42
 categories: 
   - [OI]
   - [算法]
-tags: [OI, 算法, NOIP, 搜索, DFS, BFS, 剪枝, 图论, 树论]
+tags: [OI, 算法, NOIP, 搜索, DFS, 剪枝, 生成树, 图论, 树论]
 ---
 
 去年因为这题考虑多了60变20, 1=变2=, 省队变差8分, 草(砸电脑.gif
@@ -33,47 +33,47 @@ bool roadIndex[1 + maxN][1 + maxN];
 
 void travel(int nowCity)
 {
-  if(isFinal)
-  {
-    return;
-  }
-  current++;
-  minimalSet[current] = nowCity;
-  isCityVisited[nowCity] = true;
-  if(current == n)
-  {
-    minimalSet[0] = nowCity;
-    for(int i = 1;i <= n;i++)
-    {
-      printf("%i ",minimalSet[i]);
-    }
-    isFinal = true;
-    return;
-  }
-  for(int i = 1;i <= n;i++)
-  {
-    if(isCityVisited[i] == false
-    &&(roadIndex[nowCity][i] || roadIndex[i][nowCity]))
-    {
-      travel(i);
-    }
-  }
+	if(isFinal)
+	{
+		return;
+	}
+	current++;
+	minimalSet[current] = nowCity;
+	isCityVisited[nowCity] = true;
+	if(current == n)
+	{
+		minimalSet[0] = nowCity;
+		for(int i = 1;i <= n;i++)
+		{
+			printf("%i ",minimalSet[i]);
+		}
+		isFinal = true;
+		return;
+	}
+	for(int i = 1;i <= n;i++)
+	{
+		if(isCityVisited[i] == false
+		&&(roadIndex[nowCity][i] || roadIndex[i][nowCity]))
+		{
+			travel(i);
+		}
+	}
 }
 
 int main()
 {
-  std::cin >> n >> m;
-  for(int i = 1;i <= m;i++)
-  {
-    int u,v;
-    scanf("%i %i",&u,&v);
-    roadIndex[u][v] = true;
-    roadIndex[v][u] = true;
-  }
-  
-  travel(1);
-  
-  return 0;
+	std::cin >> n >> m;
+	for(int i = 1;i <= m;i++)
+	{
+		int u,v;
+		scanf("%i %i",&u,&v);
+		roadIndex[u][v] = true;
+		roadIndex[v][u] = true;
+	}
+	
+	travel(1);
+	
+	return 0;
 }
 ```
 
@@ -95,132 +95,132 @@ int main()
 
 struct Edge
 {
-  int u, v;
-  bool w;
+	int u, v;
+	bool w;
 
-  Edge(int U = 0, int V = 0, bool W = true)
-  {
-    (*this).u = U, (*this).v = V, (*this).w = W;
-  }
+	Edge(int U = 0, int V = 0, bool W = true)
+	{
+		(*this).u = U, (*this).v = V, (*this).w = W;
+	}
 
-  void reverse()
-  {
-    std::swap((*this).u, (*this).v);
-    return;
-  }
+	void reverse()
+	{
+		std::swap((*this).u, (*this).v);
+		return;
+	}
 
-  Edge getReversed()
-  {
-    return Edge((*this).v, (*this).u, (*this).w);
-  }
+	Edge getReversed()
+	{
+		return Edge((*this).v, (*this).u, (*this).w);
+	}
 
-  Edge operator = (const Edge& inEdge)
-  {
-    (*this).u = inEdge.u, (*this).v = inEdge.v, (*this).w = inEdge.w;
-    return *this;
-  } 
+	Edge operator = (const Edge& inEdge)
+	{
+		(*this).u = inEdge.u, (*this).v = inEdge.v, (*this).w = inEdge.w;
+		return *this;
+	} 
 }
 emptyEdge;
 
 inline bool cmp(Edge E, Edge e)
 {
-  return E.v < e.v;
+	return E.v < e.v;
 }
 
 inline void copy(int n, int* ori, int* des)
 {
-  for(int i = 1; i <= n; i++) des[i] = ori[i];
+	for(int i = 1; i <= n; i++) des[i] = ori[i];
 }
 
 inline void set(int n, bool stat, bool* des)
 {
-  for(int i = 1; i <= n; i++) des[i] = stat;
+	for(int i = 1; i <= n; i++) des[i] = stat;
 }
 
 inline bool isMinDic(int n, int* dicOri, int* dicCmp)
 {
-  for(int i = 1; i <= n; i++)
-  {
-    if(dicCmp[i] != dicOri[i])
-    {
-      if(dicCmp[i] > dicOri[i]) return false;
-      if(dicCmp[i] < dicOri[i]) return true;
-    }
-  }
-  return false;
+	for(int i = 1; i <= n; i++)
+	{
+		if(dicCmp[i] != dicOri[i])
+		{
+			if(dicCmp[i] > dicOri[i]) return false;
+			if(dicCmp[i] < dicOri[i]) return true;
+		}
+	}
+	return false;
 } 
 
 inline void setEdge(int u, int v, bool w, std::vector<Edge>* graph)
 {
-  for(std::vector<Edge>::iterator it = graph[u].begin(); it != graph[u].end(); it++)
-  {
-    if((*it).v == v)
-    {
-      (*it).w = w;
-      return;
-    }
-  }
+	for(std::vector<Edge>::iterator it = graph[u].begin(); it != graph[u].end(); it++)
+	{
+		if((*it).v == v)
+		{
+			(*it).w = w;
+			return;
+		}
+	}
 }
 
 void DFS(int now, int& depth, bool* isVisited, std::vector<Edge>* graph, int* dic)
 {
-  isVisited[now] = true;
-  dic[depth++] = now;
-  for(std::vector<Edge>::iterator it = graph[now].begin(); it != graph[now].end(); it++)
-  {
-    if(!isVisited[(*it).v] && (*it).w)
-      DFS((*it).v, depth, isVisited, graph, dic);
-  }
+	isVisited[now] = true;
+	dic[depth++] = now;
+	for(std::vector<Edge>::iterator it = graph[now].begin(); it != graph[now].end(); it++)
+	{
+		if(!isVisited[(*it).v] && (*it).w)
+			DFS((*it).v, depth, isVisited, graph, dic);
+	}
 }
 
 inline void subtask(int n, std::vector<Edge>* graph, bool* isVisited, int* dic)
 {
-  for(int k = 1;k <= n;k++)
-  {
-    for(std::vector<Edge>::iterator it = graph[k].begin(); it != graph[k].end(); it++)
-    {
-      (*it).w = false/*, setEdge((*it).v, (*it).u, false, graph)*/;
+	for(int k = 1;k <= n;k++)
+	{
+		for(std::vector<Edge>::iterator it = graph[k].begin(); it != graph[k].end(); it++)
+		{
+			(*it).w = false/*, setEdge((*it).v, (*it).u, false, graph)*/;
 
-      int tDic[1 + n]; tDic[0] = 0; int depth = 1;
-      for(int i = 1; i <= n; i++){tDic[i] = 5000 + 1; isVisited[i] = false;}
+			int tDic[1 + n]; tDic[0] = 0; int depth = 1;
+			for(int i = 1; i <= n; i++){tDic[i] = 5000 + 1; isVisited[i] = false;}
 
-      DFS(1, depth, isVisited, graph, tDic);
-      if(isMinDic(n, dic, tDic)) copy(n, tDic, dic);
+			DFS(1, depth, isVisited, graph, tDic);
+			if(isMinDic(n, dic, tDic)) copy(n, tDic, dic);
 
-      (*it).w = true/*, setEdge((*it).v, (*it).u, true, graph)*/;
-    }
-  }
+			(*it).w = true/*, setEdge((*it).v, (*it).u, true, graph)*/;
+		}
+	}
 }
 
 int main()
 {
-  int n, m;
-  std::cin >> n >> m;
-  std::vector<Edge> graph[1 + n];
-  for(int i = 1; i <= m; i++)
-  {
-    int u, v;
-    scanf("%i %i", &u, &v);
-    graph[u].push_back(Edge(u, v));
-    graph[v].push_back(Edge(v, u));
-  }
-  for(int i = 1; i <= n; i++)
-  {
-    std::sort(graph[i].begin(), graph[i].end(), cmp);
-  }
+	int n, m;
+	std::cin >> n >> m;
+	std::vector<Edge> graph[1 + n];
+	for(int i = 1; i <= m; i++)
+	{
+		int u, v;
+		scanf("%i %i", &u, &v);
+		graph[u].push_back(Edge(u, v));
+		graph[v].push_back(Edge(v, u));
+	}
+	for(int i = 1; i <= n; i++)
+	{
+		std::sort(graph[i].begin(), graph[i].end(), cmp);
+	}
 
-  int dic[1 + n]; for(int i = 1;i <= n;i++){dic[i] = 5000 + 1;} dic[0] = 0;
-  bool isVisited[1 + n]; memset(isVisited, false, sizeof(isVisited));
-  int depth = 1;
-  n != m ? DFS(1, depth, isVisited, graph, dic)
-       : subtask(n, graph, isVisited, dic);
+	int dic[1 + n]; for(int i = 1;i <= n;i++){dic[i] = 5000 + 1;} dic[0] = 0;
+	bool isVisited[1 + n]; memset(isVisited, false, sizeof(isVisited));
+	int depth = 1;
+	n != m ? DFS(1, depth, isVisited, graph, dic)
+		   : subtask(n, graph, isVisited, dic);
 
-  for(int i = 1; i <= n; i++)
-  {
-    printf("%i ", dic[i]);
-  }
-  
-  return 0;
+	for(int i = 1; i <= n; i++)
+	{
+		printf("%i ", dic[i]);
+	}
+	
+	return 0;
 }
 ```
 ![TLE](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
@@ -244,142 +244,142 @@ int main()
 
 struct Edge
 {
-  int u, v;
-  bool w;
+	int u, v;
+	bool w;
 
-  Edge(int U = 0, int V = 0, bool W = true)
-  {
-    (*this).u = U, (*this).v = V, (*this).w = W;
-  }
+	Edge(int U = 0, int V = 0, bool W = true)
+	{
+		(*this).u = U, (*this).v = V, (*this).w = W;
+	}
 
-  void reverse()
-  {
-    std::swap((*this).u, (*this).v);
-    return;
-  }
+	void reverse()
+	{
+		std::swap((*this).u, (*this).v);
+		return;
+	}
 
-  Edge getReversed()
-  {
-    return Edge((*this).v, (*this).u, (*this).w);
-  }
+	Edge getReversed()
+	{
+		return Edge((*this).v, (*this).u, (*this).w);
+	}
 
-  Edge operator = (const Edge& inEdge)
-  {
-    (*this).u = inEdge.u, (*this).v = inEdge.v, (*this).w = inEdge.w;
-    return *this;
-  } 
+	Edge operator = (const Edge& inEdge)
+	{
+		(*this).u = inEdge.u, (*this).v = inEdge.v, (*this).w = inEdge.w;
+		return *this;
+	} 
 }
 emptyEdge;
 
 inline bool cmp(Edge E, Edge e)
 {
-  return E.v < e.v;
+	return E.v < e.v;
 }
 
 inline void copy(int n, int* ori, int* des)
 {
-  for(int i = 1; i <= n; i++) des[i] = ori[i];
+	for(int i = 1; i <= n; i++) des[i] = ori[i];
 }
 
 inline void set(int n, bool stat, bool* des)
 {
-  for(int i = 1; i <= n; i++) des[i] = stat;
+	for(int i = 1; i <= n; i++) des[i] = stat;
 }
 
 inline bool isMinDic(int n, int* dicOri, int* dicCmp)
 {
-  for(int i = 1; i <= n; i++)
-  {
-    if(dicCmp[i] != dicOri[i])
-    {
-      if(dicCmp[i] > dicOri[i]) return false;
-      if(dicCmp[i] < dicOri[i]) return true;
-    }
-  }
-  return false;
+	for(int i = 1; i <= n; i++)
+	{
+		if(dicCmp[i] != dicOri[i])
+		{
+			if(dicCmp[i] > dicOri[i]) return false;
+			if(dicCmp[i] < dicOri[i]) return true;
+		}
+	}
+	return false;
 } 
 
 inline void setEdge(int u, int v, bool w, std::vector<Edge>* graph)
 {
-  for(std::vector<Edge>::iterator it = graph[u].begin(); it != graph[u].end(); it++)
-  {
-    if((*it).v == v)
-    {
-      (*it).w = w;
-      return;
-    }
-  }
+	for(std::vector<Edge>::iterator it = graph[u].begin(); it != graph[u].end(); it++)
+	{
+		if((*it).v == v)
+		{
+			(*it).w = w;
+			return;
+		}
+	}
 }
 
 void DFS(int now, int& depth, bool* isVisited, std::vector<Edge>* graph, int* dic, int* cmpDic, bool& wasEqual, bool& isBestSolution, bool& notBestSolution)
 {
-  if(notBestSolution) return;
-  isVisited[now] = true;
-  dic[depth] = now;
-  if(wasEqual && !isBestSolution)
-  {
-    dic[depth] != cmpDic[depth] ? (dic[depth] < cmpDic[depth] ? isBestSolution = true : false),
-                    (dic[depth] > cmpDic[depth] ? notBestSolution = true : false),
-                    wasEqual = false
-                  : wasEqual = true;
-  }
-  depth++;
-  for(std::vector<Edge>::iterator it = graph[now].begin(); it != graph[now].end(); it++)
-  {
-    if(!isVisited[(*it).v] && (*it).w)
-      DFS((*it).v, depth, isVisited, graph, dic, cmpDic, wasEqual, isBestSolution, notBestSolution);
-  }
+	if(notBestSolution) return;
+	isVisited[now] = true;
+	dic[depth] = now;
+	if(wasEqual && !isBestSolution)
+	{
+		dic[depth] != cmpDic[depth] ? (dic[depth] < cmpDic[depth] ? isBestSolution = true : false),
+									  (dic[depth] > cmpDic[depth] ? notBestSolution = true : false),
+									  wasEqual = false
+									: wasEqual = true;
+	}
+	depth++;
+	for(std::vector<Edge>::iterator it = graph[now].begin(); it != graph[now].end(); it++)
+	{
+		if(!isVisited[(*it).v] && (*it).w)
+			DFS((*it).v, depth, isVisited, graph, dic, cmpDic, wasEqual, isBestSolution, notBestSolution);
+	}
 }
 
 inline void subtask(int n, int& depth, bool* isVisited, std::vector<Edge>* graph, int* dic, int* resultDic, bool& wasEqual, bool& isBestSolution, bool& notBestSolution)
 {
-  for(int k = 1;k <= n;k++)
-  {
-    for(std::vector<Edge>::iterator it = graph[k].begin(); it != graph[k].end(); it++)
-    {
-      (*it).w = false/*, setEdge((*it).v, (*it).u, false, graph)*/;
+	for(int k = 1;k <= n;k++)
+	{
+		for(std::vector<Edge>::iterator it = graph[k].begin(); it != graph[k].end(); it++)
+		{
+			(*it).w = false/*, setEdge((*it).v, (*it).u, false, graph)*/;
 
-      int tDic[1 + n];
-      tDic[0] = 0, depth = 1, wasEqual = true, isBestSolution = false, notBestSolution = false;
-      for(int i = 1; i <= n; i++) {tDic[i] = 5000 + 1; isVisited[i] = false;}
+			int tDic[1 + n];
+			tDic[0] = 0, depth = 1, wasEqual = true, isBestSolution = false, notBestSolution = false;
+			for(int i = 1; i <= n; i++) {tDic[i] = 5000 + 1; isVisited[i] = false;}
 
-      DFS(1, depth, isVisited, graph, tDic, resultDic, wasEqual, isBestSolution, notBestSolution);
-      if(isBestSolution) copy(n, tDic, resultDic);
+			DFS(1, depth, isVisited, graph, tDic, resultDic, wasEqual, isBestSolution, notBestSolution);
+			if(isBestSolution) copy(n, tDic, resultDic);
 
-      (*it).w = true/*, setEdge((*it).v, (*it).u, true, graph)*/;
-    }
-  }
+			(*it).w = true/*, setEdge((*it).v, (*it).u, true, graph)*/;
+		}
+	}
 }
 
 int main()
 {
-  //freopen("in","r",stdin);
-  int n, m;
-  std::cin >> n >> m;
-  std::vector<Edge> graph[1 + n];
-  for(int i = 1; i <= m; i++)
-  {
-    int u, v;
-    scanf("%i %i", &u, &v);
-    graph[u].push_back(Edge(u, v));
-    graph[v].push_back(Edge(v, u));
-  }
-  for(int i = 1; i <= n; i++)
-  {
-    std::sort(graph[i].begin(), graph[i].end(), cmp);
-  }
+	//freopen("in","r",stdin);
+	int n, m;
+	std::cin >> n >> m;
+	std::vector<Edge> graph[1 + n];
+	for(int i = 1; i <= m; i++)
+	{
+		int u, v;
+		scanf("%i %i", &u, &v);
+		graph[u].push_back(Edge(u, v));
+		graph[v].push_back(Edge(v, u));
+	}
+	for(int i = 1; i <= n; i++)
+	{
+		std::sort(graph[i].begin(), graph[i].end(), cmp);
+	}
 
-  int dic[1 + n]; for(int i = 1;i <= n;i++){dic[i] = 5000 + 1;} dic[0] = 0;
-  bool isVisited[1 + n]; memset(isVisited, false, sizeof(isVisited));
-  int depth = 1; bool wasEqual = true, isBestSolution = false, notBestSolution = false;
-  n != m ? DFS(1, depth, isVisited, graph, dic, dic, wasEqual, isBestSolution, notBestSolution)
-       : subtask(n, depth, isVisited, graph, dic, dic, wasEqual, isBestSolution, notBestSolution);
+	int dic[1 + n]; for(int i = 1;i <= n;i++){dic[i] = 5000 + 1;} dic[0] = 0;
+	bool isVisited[1 + n]; memset(isVisited, false, sizeof(isVisited));
+	int depth = 1; bool wasEqual = true, isBestSolution = false, notBestSolution = false;
+	n != m ? DFS(1, depth, isVisited, graph, dic, dic, wasEqual, isBestSolution, notBestSolution)
+		   : subtask(n, depth, isVisited, graph, dic, dic, wasEqual, isBestSolution, notBestSolution);
 
-  for(int i = 1; i <= n; i++)
-  {
-    printf("%i ", dic[i]);
-  }
-  
-  return 0;
+	for(int i = 1; i <= n; i++)
+	{
+		printf("%i ", dic[i]);
+	}
+	
+	return 0;
 }
 ```
