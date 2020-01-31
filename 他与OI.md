@@ -5,15 +5,18 @@ categories:
   - [OI]
   - [infi]
 tags: [OI, infi, 随笔]
+thumbnail: https://infi.wang/ContentStorage/pic/blog/他与OI/infiWangAndSF.jpg
 music: 
   - enable: true
     color: '#000'
+    volume: 0.7
+    mode: single
     server: netease
     type: song
-    id: 16957743
+    id: 26121765
 ---
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=16957743&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26121765&auto=1&height=66"></iframe>
 
 >&emsp;&emsp;西西佛斯因恼怒了神祇, 被罚以一项永无止歇的苦刑: 将一块大石头从奥林帕斯山下推到山上. 但由于诅咒的力量, 巨石抵达山顶的刹那, 就会自动滚落到山下, 周而复始. 西西佛斯永远没有完成使命的一天, 永远重复同样劳苦无望的命运……
 &emsp;&emsp;然而有一天, 西西佛斯在搬运巨石的途中忽然觉得自己搬动巨石的每个动作都那么美: 他专注地观察着自己全力以赴的每个当下, 有了一种幸福感; 他全心享受这份苦役, 不再抱怨焦虑. 奇妙的事发生了: 诅咒竟然在这一刹那解除, 巨石不再滚回山下, 西西佛斯从永无休止的苦役中重获自由. 
