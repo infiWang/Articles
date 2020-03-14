@@ -18,7 +18,7 @@ thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brut
 
 - 第一种, n = m - 1 时为一棵树. 
 
-只要保证出边到达点字典序从小到大后进行一次不回溯的DFS即可, 复杂度O(n). 以下为本人去年此subtask的去锅代码. 
+只要保证出边到达点字典序从小到大后进行一次不回溯的DFS即可, 复杂度$O\left ( N \right )$. 以下为本人去年此subtask的去锅代码. 
 ```cpp
 #include <cstdlib>
 #include <cstdio>
@@ -228,9 +228,9 @@ int main()
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
-很明显, 这个方法的复杂度是O(n2). 所以炸T也不奇怪.
+很明显, 这个方法的复杂度是$O\left ( N^{2} \right )$. 所以炸T也不奇怪.
 
-- 这时就需要剪枝了, 这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 于是最终得到以下代码, 复杂度大O(n2). 
+- 这时就需要剪枝了, 这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 于是最终得到以下代码, 复杂度最坏$O\left ( N^{2} \right )$. 
 
 ```cpp
 #include <cstdlib>
