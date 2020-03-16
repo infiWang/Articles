@@ -13,13 +13,23 @@ thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brut
 
 ------------
 
+**本题解几乎全为代码, 请静下心阅读. 放心, 我的代码可读性还是很高的.**
+
+# 题目
+
+![NOIP2018.D2T1](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
+
+![Datarange](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
+
+# 题解
+
 回到正题. 首先观察数据. n = 5000, 所以暴力就好了. 当时直接上邻接矩阵都过了树的subtask. 
 
 现在讨论情况. 
 
-- 第一种, n = m - 1 时为一棵树. 
+## 第一种, n = m - 1 时为一棵树. 
 
-只要保证出边到达点字典序从小到大后进行一次不回溯的DFS即可, 复杂度$O\left ( N \right )$. 以下为本人去年此subtask的去锅代码. 
+只要保证出边到达点字典序从小到大后进行一次不回溯的DFS即可, 复杂度$\Theta \left ( N \right )$. 以下为本人去年此subtask的去锅代码. 
 ```cpp
 #include <cstdlib>
 #include <cstdio>
@@ -80,7 +90,7 @@ int main()
 ```
 
     
-- 第二种, n = m 时为一张有且仅有一条环的图
+## 第二种, n = m 时为一张有且仅有一条环的图
 
 去年我看到这就放弃了, 毕竟当时连存图都是凭印象瞎搞的. 当然, 现在看来无非两种方式: 找边, 找环. 这里从简(其实还是不会), 只讨论暴力断边的方案. 
     这样一张图(基环树/图)有这样的性质: 断环上的任意一条边就变成一棵树. 那么就有以下代码. 
@@ -229,9 +239,11 @@ int main()
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
-很明显, 这个方法的复杂度是$O\left ( N^{2} \right )$. 所以炸T也不奇怪.
+很明显, 这个方法的复杂度为$\Omega \left ( n \right )$(几乎不可能), $O \left ( N^{2} \right )$(偏向后者), 所以炸T也不奇怪.
 
-- 这时就需要剪枝了, 这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 于是最终得到以下代码, 复杂度最坏$O\left ( N^{2} \right )$. 
+## 这时就需要剪枝了
+
+这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 于是最终得到以下代码, 复杂度$\Omega \left ( n \right )$, $O \left ( N^{2} \right )$(偏向前者). 
 
 ```cpp
 #include <cstdlib>
