@@ -6,14 +6,17 @@ categories:
   - [算法]
 tags: [OI, 算法, NOIP, 搜索, DFS, 剪枝, 生成树, 图论, 树论]
 mathjax: true
-thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png
 ---
+
+![](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 去年因为这题考虑多了60变20, 1=变2=, 省队变差8分, 草(砸电脑.gif
 
 ------------
 
 **本题解几乎全为代码, 请静下心阅读. 我相信我的的代码可读性还是很高的.**
+
+<!-- more -->
 
 # 题目
 
