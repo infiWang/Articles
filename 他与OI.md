@@ -1,4 +1,4 @@
-﻿---
+---
 title: 他与OI
 date: 2019-12-01 13:15:49
 categories: 
@@ -7,17 +7,15 @@ categories:
 tags: [OI, infi, 随笔]
 thumbnail: https://infi.wang/ContentStorage/pic/blog/他与OI/infiWangAndSF.jpg
 music: 
-  - enable: true
-    color: '#000'
-    volume: 0.2
-    mode: single
-    server: netease
+  - server: netease
     type: song
     id: 426194195
 ---
 
 >&emsp;&emsp;西西佛斯因恼怒了神祇, 被罚以一项永无止歇的苦刑: 将一块大石头从奥林帕斯山下推到山上. 但由于诅咒的力量, 巨石抵达山顶的刹那, 就会自动滚落到山下, 周而复始. 西西佛斯永远没有完成使命的一天, 永远重复同样劳苦无望的命运……
 &emsp;&emsp;然而有一天, 西西佛斯在搬运巨石的途中忽然觉得自己搬动巨石的每个动作都那么美: 他专注地观察着自己全力以赴的每个当下, 有了一种幸福感; 他全心享受这份苦役, 不再抱怨焦虑. 奇妙的事发生了: 诅咒竟然在这一刹那解除, 巨石不再滚回山下, 西西佛斯从永无休止的苦役中重获自由. 
+
+<!-- more -->
 
 ## 这是他的故事
 
