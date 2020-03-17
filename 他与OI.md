@@ -5,12 +5,17 @@ categories:
   - [OI]
   - [infi]
 tags: [OI, infi, 随笔]
-thumbnail: https://infi.wang/ContentStorage/pic/blog/他与OI/infiWangAndSF.jpg
 music: 
   - server: netease
     type: song
     id: 426194195
 ---
+
+<fancybox>
+
+![](https://cdn.infi.wang/pic/blog/他与OI/infiWangAndSF.jpg)
+
+</fancybox>
 
 >&emsp;&emsp;西西佛斯因恼怒了神祇, 被罚以一项永无止歇的苦刑: 将一块大石头从奥林帕斯山下推到山上. 但由于诅咒的力量, 巨石抵达山顶的刹那, 就会自动滚落到山下, 周而复始. 西西佛斯永远没有完成使命的一天, 永远重复同样劳苦无望的命运……
 &emsp;&emsp;然而有一天, 西西佛斯在搬运巨石的途中忽然觉得自己搬动巨石的每个动作都那么美: 他专注地观察着自己全力以赴的每个当下, 有了一种幸福感; 他全心享受这份苦役, 不再抱怨焦虑. 奇妙的事发生了: 诅咒竟然在这一刹那解除, 巨石不再滚回山下, 西西佛斯从永无休止的苦役中重获自由. 
@@ -29,7 +34,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/blog/他与OI/dadsExCompany.jpg "父亲的前公司")
+![](https://cdn.infi.wang/pic/blog/他与OI/dadsExCompany.jpg "父亲的前公司")
 
 </fancybox>
 
@@ -37,7 +42,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/blog/他与OI/YUSS-Grade2016Class6.jpg "他的在的六班")
+![](https://cdn.infi.wang/pic/blog/他与OI/YUSS-Grade2016Class6.jpg "他的在的六班")
 
 </fancybox>
 
@@ -55,7 +60,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/blog/他与OI/highschoolEntranceExamScoreInform-Blured.png "他的中考成绩单")
+![](https://cdn.infi.wang/pic/blog/他与OI/highschoolEntranceExamScoreInform-Blured.png "他的中考成绩单")
 
 </fancybox>
 
@@ -87,7 +92,7 @@ music:
 
 <fancybox>
 
-![](https://infi.wang/ContentStorage/pic/blog/他与OI/infi'sLuoguStat-19-12-03.png "infiWang的洛谷状态, 2019.12.03")
+![](https://cdn.infi.wang/pic/blog/他与OI/infi'sLuoguStat-19-12-03.png "infiWang的洛谷状态, 2019.12.03")
 
 </fancybox>
 
@@ -97,13 +102,8 @@ music:
 
 &emsp;&emsp;就如ZCY所说: "我们喜欢的可能不是OI, 而是OI这件事情本身, 而是和一群志同道合的人一起, 做些即使拿自己的未来做赌注也喜欢, 也要去做的事情." 所以, 对事物的经历与过程才是更为重要的吧. 
 
-## 谢谢你听完我的故事. 
+# 谢谢你听完我的故事. 
 
-<fancybox>
-
-![](https://infi.wang/ContentStorage/pic/blog/他与OI/infiWangAndSF.jpg)
-我和SF, 摄于和成国际. 拍完这张照片后我回学校溜达了一阵
-
-</fancybox>
+题图为我和SF, 摄于和成国际. 拍完这张照片后我回学校溜达了一阵
 
 另外感谢Mouered(LWK), ZXY, ZSH, LYY, WBY. 
