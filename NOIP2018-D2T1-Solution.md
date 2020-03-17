@@ -20,9 +20,9 @@ mathjax: true
 
 # 题目
 
-![NOIP2018.D2T1](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
+![NOIP2018.D2T1](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
 
-![Datarange](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
+![Datarange](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
 
 # 题解
 
@@ -238,7 +238,7 @@ int main()
 	return 0;
 }
 ```
-![TLE](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
+![TLE](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
