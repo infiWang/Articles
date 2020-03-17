@@ -6,8 +6,9 @@ categories:
   - [算法]
 tags: [OI, 算法, NOIP, 搜索, DFS, 剪枝, 生成树, 图论, 树论]
 mathjax: true
-thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png
 ---
+
+![](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 去年因为这题考虑多了60变20, 1=变2=, 省队变差8分, 草(砸电脑.gif
 
@@ -15,11 +16,13 @@ thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brut
 
 **本题解几乎全为代码, 请静下心阅读. 我相信我的的代码可读性还是很高的.**
 
+<!-- more -->
+
 # 题目
 
-![NOIP2018.D2T1](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
+![NOIP2018.D2T1](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
 
-![Datarange](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
+![Datarange](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
 
 # 题解
 
@@ -235,7 +238,7 @@ int main()
 	return 0;
 }
 ```
-![TLE](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
+![TLE](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
 我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
