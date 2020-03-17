@@ -13,7 +13,7 @@ thumbnail: https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brut
 
 ------------
 
-**本题解几乎全为代码, 请静下心阅读. 放心, 我的代码可读性还是很高的.**
+**本题解几乎全为代码, 请静下心阅读. 我相信我的的代码可读性还是很高的.**
 
 # 题目
 
