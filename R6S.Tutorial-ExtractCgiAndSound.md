@@ -30,11 +30,11 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 *正在连接到服务器
 
-![R2SI2020 Main Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/Y4S4.R2SI.MainMenu.Week1.jpg)
+![R2SI2020 Main Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.Y4S4.R2SI.MainMenu.Week1.jpg)
 
 *通行证加载
 
-!["Welcome to the program. "](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/Y4S4.R2SI.CGI.TheProgram.jpg)
+!["Welcome to the program. "](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y4s4_overview.jpg)
 
 *通行证购买, 通行证关闭
 
@@ -66,15 +66,15 @@ R6S使用了Ubi内部的AnvilNext2.0引擎, forge文件还和其它Anvil游戏�
 
 #### 文件信息
 
-![Situation m21 Intro](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Player.m21_intro.png)
+![Situation m21 Intro](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Player.m21_intro.png)
 
-![R2SI2020 CGI](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Player.y4s4_overview.png)
+![R2SI2020 CGI](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Player.y4s4_overview.png)
 
-![Bik Info](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Menu.Fileinfo.png)
+![Bik Info](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Menu.Fileinfo.png)
 
 只要你曾经看过拆迁的文件就会发现所有CGI其实都装在RAD Video Tools打包的.bik视频文件里, 文件在拆迁目录里的videos文件夹里. 文件没有加密, 具体编码封装工具据RAD报告称是Bink 2. 这样的bik文件去[RAD官网](http://www.radgametools.com)下一套[工具](http://www.radgametools.com/bnkdown.htm)就能打开. Outbreak TTS时我就是靠这个工具提前12小时看到了不同任务的CG. 
 
-![RAD Main Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Menu.Main.png)
+![RAD Main Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Menu.Main.png)
 
 #### 工具
 
@@ -84,15 +84,15 @@ R6S使用了Ubi内部的AnvilNext2.0引擎, forge文件还和其它Anvil游戏�
 
 RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中想解的CG点"Convert to……"按钮, 选择输出格式就好了. 视频只能输出avi, 编码选未压缩. 不过未压缩会相当大, 如果要分享最好输出exe, 选项在大小和源文件几乎一致. (我猜是把一个player和bik打一起了)
 
-![RAD Convert Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Menu.Convert.png)
+![RAD Convert Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Menu.Convert.png)
 
-![RAD Convert Select Codec](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Menu.SetCodec.png)
+![RAD Convert Select Codec](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Menu.SetCodec.png)
 
-![RAD Converting](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Convert.Processing.png)
+![RAD Converting](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Convert.Processing.png)
 
-![RAD Converted](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Convert.Done.png)
+![RAD Converted](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Convert.Done.png)
 
-![RAD Advanced Play Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Menu.AdvancedPlay.png)
+![RAD Advanced Play Menu](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Menu.AdvancedPlay.png)
 
 什么, 你问其它avi编码器? 醒醒, Modern的Bink 2 SDK是商业用而且要钱的……
 
@@ -100,11 +100,11 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 在, 看看关于? 上世纪的编码器您敢用? 即便用了输出也会有一堆问题, 是FFmpeg重新编码不香吗? 但是这个我就不赘述了. 
 
-![RAD Grandpa Codec](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.GrandpaCodec.png)
+![RAD Grandpa Codec](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.GrandpaCodec.png)
 
 不过R2SI 2020的Intro CGI是个例外, 即便输出raw avi也会出现诡异的时间轴和采样问题. 但输出图片没有问题……
 
-![Weird Ouput](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/Y4S4.R2SI.CGI.RadTransGlitch.png)
+![Weird Ouput](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y4s4_overview.RadTransGlitch.png)
 
 鬼知道未来还会不会出现这种问题, 而且方便传播的视频数据谁不爱呢? 因此我认为需要一个备用方案, 所以又该FFmpeg出场了. 
 
@@ -114,7 +114,7 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 首先通过RAD VT查看视频源帧率(File Info), 要是和整数很接近的小数的话四舍五入到整数. 设置RAD VT的输出为png, 选好输出目录与输出名字. 文件将自动按帧输出, 并在文件名最后自动加上帧数号, 帧数号含前缀0. 
 
-![RAD Pic Output List](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RAD.Output.Pics.png)
+![RAD Pic Output List](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/RADVT.Output.Pics.png)
 
 假定你已经配置好了FFmpeg, 可以使用终端/命令行调用. Win下推荐使用静态链接版. 我们只需要ffmpeg/ffmpeg.exe
 
@@ -159,9 +159,9 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 只要不出错不关闭, 成品就会出现在你指定的位置. 
 
-下面便是是成品. 注意, 为了能塞进CDN, 我把成品降了分辨率. 
+下面便是是成品. 注意, 为了能塞进CDN, 我把成品转成gif并降了分辨率和帧率. 
 
-{% dplayer "url=http://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/y5s1_opsunlock_bundle_dynamic.720P.mp4" "autoplay=false" %}
+![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif){:height="1280px" width="720px"}
 
 如要添加音轨, 再在第一个-i后添加-i并输入音频, 对音频使用copy编码就行了. 其它高级玩法自行查阅FFmpeg手册. 
 
@@ -184,7 +184,7 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 这里是Y5S1.1文件列表示例: 
 
-![Y5S1.1 Sounddata]()
+![Y5S1.1 Sounddata](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.Y5S1_1.sounddata.png)
 
 将.pck拆开后会发现子文件有四种扩展名. 这里给出对应编码和主要存储内容: 
 
