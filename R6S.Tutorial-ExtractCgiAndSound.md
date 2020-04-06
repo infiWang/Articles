@@ -46,7 +46,7 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 ![Stadium Match Start](https://1734811051.rsc.cdn77.org/data/images/full/360859/rainbow-six-siege-road-to-si-2020-everything-you-need-to-know.jpg)
 
-{% meting "000zIdVW2duNL8" "tencent" "song" "autoplay:true" %}
+<video controls="" autoplay="" name="media"><source src="https://dl.infi.wang/R6SFiles/Sounds/Music/Map/Stadium/Theme.ogg" type="audio/ogg"></video>
 
 ~~当时听到这段BGM的时候差点没Ban对干员, 实在太ao听了~~
 
