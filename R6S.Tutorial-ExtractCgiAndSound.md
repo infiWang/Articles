@@ -8,6 +8,8 @@ categories:
 tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 ---
 
+![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
+
 **包本身和部分解包后的文件已上传至我的下载站, 持续更新**
 
 [infiDownloadSite/R6SFiles](https://dl.infi.wang/R6SFiles/)
@@ -161,7 +163,7 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 下面便是是成品. 注意, 为了能塞进CDN, 我把成品转成gif并降了分辨率和帧率. 
 
-![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif){:height="1280px" width="720px"}
+![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
 
 如要添加音轨, 再在第一个-i后添加-i并输入音频, 对音频使用copy编码就行了. 其它高级玩法自行查阅FFmpeg手册. 
 
@@ -203,7 +205,7 @@ Wwise在游戏工业界已经使用多年, 即便官方从未支持解包, 民�
 
 下述工具均已上传至我的下载站. [infiDownloadSite/R6SFiles/Tools](https://dl.infi.wang/R6SFiles/Tools/)
 
-##### 手动工具: 
+##### 手动工具
 
 - QuickBMS  通用文件处理引擎, 使用特定脚本执行动作. 由Luigi Auriemma开发, 开源, 协议未知.  主页: [Luigi Auriemma QuickBMS](https://aluigi.altervista.org/quickbms.htm)
 - ww2ogg  Wwise Vorbis RIFF/RIFX编码声音文件转ogg Vorbis声音文件工具, 用于转换.wwise文件.  由hcs(Adam Gashlin)开发, 开源, 使用BSD Clause-3协议.  GitHub仓库: [hcs64/ww2ogg](https://github.com/hcs64/ww2ogg)
@@ -214,7 +216,7 @@ Wwise在游戏工业界已经使用多年, 即便官方从未支持解包, 民�
 - bnk_extractor.bms  用于解包.bnk文件的QBMS脚本, 作者依然是XeNTaX论坛的AlphaTwentyThree. 
 - wwise_pcm_decoder.bms  Wwise PCM编码声音文件转PCM声音文件QBMS脚本, 用于转换.at3文件.  作者未知. 
 
-##### 自动工具: 
+##### 自动工具
 
 ***One tool to Rule'em all***
 
