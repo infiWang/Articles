@@ -173,29 +173,31 @@ RAD Video Tools用来解包其实相当简单, 一般来说打开Tools后选中�
 
 .pck文件有多种命名方式: 
 
-- sound_sfx              存储各种音效, 大多枪声/物件声
-- sound_sfx_bootstrap    存储赛季/活动音乐(主题曲)、地图音乐与部分UI/氛围音效
-- sound_sfx_playgo       存储情境、情境/干员CGI音乐与部分UI/氛围音效
-- sound_sfx_maps         存储地图环境音与地图内物件声音
-- sound_sfx_events       存储活动所使用的特殊音效
-- sound_sfx_cgi          存储CGI使用的音乐
-- sound_(语言缩写)        存储对应语言的语音
-- 及以上格式的组合
+- sound_sfx              存储各种音效, 大多枪声/物件声. 
+- sound_sfx_bootstrap    存储赛季/活动音乐(主题曲)、地图音乐与部分UI/氛围音效. 
+- sound_sfx_playgo       存储情境、情境/干员CGI音乐与部分UI/氛围音效 
+- sound_sfx_maps         存储地图环境音与地图内物件声音. 
+- sound_sfx_events       存储活动所使用的特殊音效. 
+- sound_sfx_cgi          存储CGI使用的音乐. 
+- sound_(语言缩写)        存储对应语言的语音. 
+- 及以上格式的组合, 等. 
 
-这里是Y5S1.1文件列表示例: 
+这里是Y5S1.0文件列表示例: 
 
-![Y5S1.1 Sounddata](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.Y5S1_1.sounddata.png)
+![Y5S1.0 Sounddata](https://cdn.infi.wang/pic/blog/R6S.Tutorial-ExtractCgiAndSound/R6S.Y5S1_0.sounddata.png)
 
 将.pck拆开后会发现子文件有四种扩展名. 这里给出对应编码和主要存储内容: 
 
-- .wwise    为Wwise Vorbis RIFF编码的有损声音文件, 几乎什么都存储
+- .wwise    为Wwise Vorbis RIFF编码的有损声音文件, 几乎什么都存储(例如赛季主题曲, 地图主题音乐, 菜单BGM、按钮音效)
 - .lwav     为Wwise IMA ADPCM编码的无损声音文件, 存储部分地图/物件音效
 - .at3      为Wwise PCM编码的无损声音文件, 寥寥无几
 - .pnk      为包含文件内部名称及部分声音子文件的包  ~~禁止套娃~~
 
-在Y4的某次更新中.pnk文件存储内部名称的方式有所改变, 使用自动化工具解当前版本游戏的包对应文件名称将会变为offset地址! 
+在Y4的某次更新中.pnk文件存储声音内部名称的方式有所改变, 使用现有工具/脚本解当前版本游戏的包对应声音文件名称将会变为相应文件在原包中的16位offset地址! 
 
 #### 工具
+
+以下内容较为硬盒, 不建议普通玩家轻易尝试. 而且由于我时间不足, 以下教程仅为大略, 若有无法复现的请认真阅读相应工具的帮助文档, 进行Debug, 并前往相应原来源论坛求助. 如果未来有时间, 我也会对下述内容进行更友好的完善. 
 
 Wwise在游戏工业界已经使用多年, 即便官方从未支持解包, 民间工具也已相当完善. 这里列举我所使用的工具. 
 
@@ -203,14 +205,14 @@ Wwise在游戏工业界已经使用多年, 即便官方从未支持解包, 民�
 
 ##### 手动工具: 
 
-- QuickBMS  通用文件处理引擎, 使用特定脚本执行动作, 由Luigi Auriemma开发. 开源, 协议未知.  主页: [Luigi Auriemma QuickBMS](https://aluigi.altervista.org/quickbms.htm)
-- ww2ogg  Wwise Vorbis RIFF/RIFX编码声音文件转ogg Vorbis声音文件工具, 由hcs(Adam Gashlin)开发.  开源, 使用BSD Clause-3协议.  GitHub仓库: [hcs64/ww2ogg](https://github.com/hcs64/ww2ogg)
-- wwise_ima_adpcm  Wwise IMA ADPCM编码声音文件与PCM声音文件互转工具, 由Zwagoth开发.  未找到原始下载源. 
-- revorb  ogg Vorbis音频granule_position修复工具, 由Yirkha(Jiri Hruska)开发. 开源, 使用MIT协议.  原发布贴: [Can't play vorbis](https://web.archive.org/web/20150619030401/https://hydrogenaud.io/forums/lofiversion/index.php/t64328.html)  源代码: [revorb.cpp](https://web.archive.org/web/20150619030401/http://yirkha.fud.cz/progs/foobar2000/revorb.cpp)
-- func_getTYPE.bms  使用启发式算法确定文件类型的QBMS脚本, 是多个QBMS脚本的依赖. 作者为XeNTaX论坛的AlphaTwentyThree. 
+- QuickBMS  通用文件处理引擎, 使用特定脚本执行动作. 由Luigi Auriemma开发, 开源, 协议未知.  主页: [Luigi Auriemma QuickBMS](https://aluigi.altervista.org/quickbms.htm)
+- ww2ogg  Wwise Vorbis RIFF/RIFX编码声音文件转ogg Vorbis声音文件工具, 用于转换.wwise文件.  由hcs(Adam Gashlin)开发, 开源, 使用BSD Clause-3协议.  GitHub仓库: [hcs64/ww2ogg](https://github.com/hcs64/ww2ogg)
+- wwise_ima_adpcm  Wwise IMA ADPCM编码声音文件与PCM声音文件互转工具, 用于转换.lwav文件.  由Zwagoth开发, 未找到原始下载源. 
+- revorb  ogg Vorbis音频granule_position修复工具, 用于修复ww2ogg输出.  由Yirkha(Jiri Hruska)开发, 开源, 使用MIT协议.  原发布贴: [Can't play vorbis](https://web.archive.org/web/20150619030401/https://hydrogenaud.io/forums/lofiversion/index.php/t64328.html)  源代码: [revorb.cpp](https://web.archive.org/web/20150619030401/http://yirkha.fud.cz/progs/foobar2000/revorb.cpp)
+- func_getTYPE.bms  使用启发式算法确定文件类型的QBMS脚本, 是多个QBMS脚本的依赖, 作者为XeNTaX论坛的AlphaTwentyThree. 
 - pck_AKPK_extractor.bms  用于解包.pck文件的QBMS脚本, 作者同为XeNTaX论坛的AlphaTwentyThree. 
 - bnk_extractor.bms  用于解包.bnk文件的QBMS脚本, 作者依然是XeNTaX论坛的AlphaTwentyThree. 
-- wwise_pcm_decoder.bms  Wwise PCM编码声音文件转PCM声音文件QBMS脚本, 作者未知. 
+- wwise_pcm_decoder.bms  Wwise PCM编码声音文件转PCM声音文件QBMS脚本, 用于转换.at3文件.  作者未知. 
 
 ##### 自动工具: 
 
@@ -218,4 +220,22 @@ Wwise在游戏工业界已经使用多年, 即便官方从未支持解包, 民�
 
 - Tom Clancy's Rainbow Six Siege Sound Extractor  R6S声音文件解包工具, 作者为XeNTaX论坛的FatalBulletHit.  开源, 协议未知. 本质为Windows CMD脚本与Powershell脚本, 将上述手动工具解包过程自动化.  原发布贴: [Tom Clancy's Rainbow Six Siege Sound Extractor](http://forum.xentax.com/viewtopic.php?p=140570#p140570)
 
+##### 使用手动工具解包
+
+大多数工具按照相应--help和document进行操作即可. 
+
 ##### 使用自动工具解包
+
+从源站下载bat执行就完了(
+
+有以下几个坑: 
+
+- Powershell版本不应低于Powershell 4
+- bat脚本其实只是核心Powershell脚本的Bootstrapper, 建议实际使用时直接从Powershell启动ps1脚本, 否则容易出现像是解不出来、解出AudioKinect文件不转换甚至都解好转换完毕了还能删歪来的迷惑行为. 
+- 工具默认从注册表读取Uplay版本的安装地址. 如果你用的是Steam / Origin / 其它平台(包括破解版 / 备份), 记得修改脚本中的变量. 注意符号转义行为! 
+- 脚本默认使用Powershell的Test-Connection函数对www.google.com测试网络连通性, 不通还会罢工, 而且在国内即便开了小飞机也有可能出现奇妙的问题. 建议全文搜索, 将 www.google.com 替换成国内可ping地址. 我个人用的 www.miui.com , 挺稳. 当然要是网络没法下载相应手动工具那当然也跑不了. 
+- 建议开-Debug开关, 时刻准备好debug. 
+- 只要你在工具内选择解相应格式的包, 所有对应格式的包都会被解包转换. 对于pck原包来说, 其实工具只是识别并解"游戏文件夹/sounddata/pc"内的所有pck包文件. 如果您只想解某一特定包, 可以将不想要的文件剪切走; 或者干脆新建个文件结构一致的"假"文件夹, 把想解的包贴进去, 再把假游戏文件夹喂给脚本就行了. 
+- 原文件内小文件众多, IOPS压力会很大, 输出也大的离谱. 建议准备好声音文件大小两倍左右的空间, 放在SSD上跑. 个人在eMMC USB盘上解了15个小时, 人都等傻了. 
+
+## Happy Hacking! 
