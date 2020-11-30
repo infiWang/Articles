@@ -8,9 +8,9 @@ tags: [OI, 算法, NOIP, 搜索, DFS, 剪枝, 生成树, 图论, 树论]
 mathjax: true
 ---
 
-![](https://infi.wang/ContentStorage/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
+![initalResult](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
-去年这题考虑过多, 喜提60变20、1=变2=、省队变差8分, 草(砸电脑.gif
+&emsp;&emsp;去年考场上本题考虑过多, 喜提60变20、1=变2=、省队变差8分, 草(砸电脑.gif
 
 ------------
 
@@ -18,21 +18,23 @@ mathjax: true
 
 <!-- more -->
 
-# 题目
+## 题目
 
 ![NOIP2018.D2T1](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.png)
 
 ![Datarange](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/NOIP2018.D2T1.Datarange.png)
 
-# 题解
+## 题解
 
-回到正题. 首先观察数据. n = 5000, 所以暴力就好了. 我在考场上用邻接矩阵都过了树的subtask. 
+&emsp;&emsp;回到正题. 首先观察数据. n = 5000, 所以暴力就好了. 我在考场上用邻接矩阵都过了树的subtask.
 
-现在讨论各个subtask的情况. 
+&emsp;&emsp;现在讨论各个subtask的情况.
 
-## 第一种, n = m - 1 时为一棵树. 
+### n = m - 1
 
-只需以出边到达点字典序从小到大进行一次不回溯的DFS(树生成), 再判断生成树的字典序即可; 复杂度$\Theta \left ( N \right )$. 以下为本人去年此subtask的去锅代码. 
+&emsp;&emsp;明显, 此时的图为一棵树. 只需以出边到达点字典序从小到大进行一次不回溯的DFS(树生成), 再判断生成树的字典序即可; 复杂度$\Theta \left ( N \right )$.
+
+&emsp;&emsp;以下为本人去年此subtask的去锅代码.
 
 ```cpp
 #include <cstdlib>
@@ -93,12 +95,13 @@ int main()
 }
 ```
 
-    
-## 第二种, n = m 时为一张有且仅有一条环的图
+### n = m
 
-去年我看到这就放弃了, 毕竟当时连存图都是凭印象瞎搞的. 当然, 现在看来无非两种方式: 找边, 找环. 这里从简(其实还是不会), 只讨论暴力断边的方案. 
+&emsp;&emsp;相应地, 这种情况下的图为有且只有一条环的图.
 
-这样一张图(基环树/图)有这样的性质: 断环上的任意一条边, 图就变成一棵树. 那么就有以下暴力断开每一条边再进行树生成并判断字典序的代码. 
+&emsp;&emsp;去年看到这就放弃了, 毕竟当时连存图都是凭印象瞎搞的. 当然, 现在看来无非两种方式: 找边, 找环. 这里从简(其实还是不会), 只讨论暴力断边的方案.
+
+&emsp;&emsp;这样一张图(基环树/图)有这样的性质: 断环上的任意一条边, 图就变成一棵树. 那么就有以下暴力断开每一条边再进行树生成并判断字典序的代码.
 
 ```cpp
 #include <cstdlib>
@@ -241,15 +244,18 @@ int main()
 	return 0;
 }
 ```
+
 ![TLE](https://cdn.infi.wang/pic/blog/NOIP2018-D2T1-Solution/brutalForceTLE.png)
 
-我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
+&emsp;&emsp;我交了, 吸氧了, 多50ms T了, 那咋办嘛 QAQ
 
-很明显, 这个简单暴力方法的复杂度为$\Theta \left ( N^{2} \right )$, 所以炸T也不奇怪.
+&emsp;&emsp;很明显, 这个简单暴力方法的复杂度为$\Theta\left(N^{2}\right)$, 所以T了也不奇怪.
 
-### 这时就需要剪枝了
+#### 剪枝
 
-这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 修改上述程序, 最终得到以下代码, 复杂度$\Omega \left ( n \right )$, $O \left ( N^{2} \right )$. 
+&emsp;&emsp;相应地, 这时就需要剪枝了.
+
+&emsp;&emsp;这里只讲最优化剪枝. 当当前搜索所得序列劣于已得最佳序列时就可选择剪枝. 修改上述程序, 最终得到以下代码, 复杂度$\Omega\left(n\right)$, $O\left(N^{2}\right)$.
 
 ```cpp
 #include <cstdlib>
