@@ -1,17 +1,18 @@
 ---
-title: 彩虹六号围攻 CGI与PCK声音解包指南
+title: 彩虹六号：围攻 CGI与PCK声音解包指南
 date: 2020-03-17 20:15:46
 categories: 
   - [教程]
   - [游戏]
   - [彩虹六号]
   - [逆向]
+  - [中文]
 tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 ---
 
 **自Y5S3暗影之遗行动开始, 声音文件由PCK包变为了AnvilNext的Forge包. 本教程暂未对此做出更新**
 
-![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
+![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
 
 **包本身和部分解包后的文件已上传至我的下载站, 持续更新**
 
@@ -35,11 +36,11 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 *正在连接到服务器
 
-![R2SI2020 Main Menu](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.Y4S4.R2SI.MainMenu.Week1.jpg)
+![R2SI2020 Main Menu](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.Y4S4.R2SI.MainMenu.Week1.jpg)
 
 *通行证加载
 
-!["Welcome to the program. "](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.CGI.y4s4_overview.jpg)
+!["Welcome to the program. "](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.CGI.y4s4_overview.jpg)
 
 *通行证购买, 通行证关闭
 
@@ -51,11 +52,11 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 {% audio https://dl.infi.wang/R6SFiles/Sounds/Music/Map/Stadium/Theme.ogg %}
 
-~~当时听到这段BGM的时候差点没Ban对干员, 实在太ao听了~~
+&emsp;&emsp;~~当时听到这段BGM的时候差点没Ban对干员, 实在太ao听了~~
 
-&emsp;&emsp;活动开始几天后发生了什么大家都知道. 很不巧, 后来自己的电脑显卡爆炸, 没有BGM听我要死了
+&emsp;&emsp;活动开始几天后发生了什么相信大家都知道. 很不巧, 加之自己的电脑显卡爆炸, 没有BGM听我要死了
 
-&emsp;&emsp;所以我就开始研究怎么解包力
+&emsp;&emsp;所以我就开始研究怎么解包力，，，
 
 ## 分析及解包
 
@@ -67,19 +68,19 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 ### CGI
 
-&emsp;&emsp;**Ubi没有把声音打在bik里, 要么准备解pck声音包, 要么就享受无声世界罢.**
+**Ubi没有把声音打在bik里, 要么准备解pck声音包, 要么就享受无声世界罢.**
 
 #### 文件信息
 
-![Situation m21 Intro](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Player.m21_intro.png)
+![Situation m21 Intro](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Player.m21_intro.png)
 
-![R2SI2020 CGI](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Player.y4s4_overview.png)
+![R2SI2020 CGI](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Player.y4s4_overview.png)
 
-![Bik Info](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Menu.Fileinfo.png)
+![Bik Info](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Menu.Fileinfo.png)
 
 &emsp;&emsp;如果你曾经研究过拆迁的文件结构, 会发现所有CGI其实都存储在RAD Video Tools打包的.bik视频文件里, 而文件本身则位于拆迁目录里的videos文件夹中. 文件没有加密, 具体编码封装工具据RAD VT报告称是Bink 2. 这样的bik文件去[RAD官网](http://www.radgametools.com)下载一套[工具](http://www.radgametools.com/bnkdown.htm)就能打开. 在2018年Outbreak TTS时, 我就是靠这个工具得以提前12小时看到了不同任务的序言CG.
 
-![RAD Main Menu](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Menu.Main.png)
+![RAD Main Menu](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Menu.Main.png)
 
 #### 工具
 
@@ -89,25 +90,25 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 &emsp;&emsp;RAD Video Tools用来解包相当简单, 一般来说只需打开RAD VT, 在选中想解包的CG后点击"Convert to……"按钮, 最后选择输出格式、确定输出路径就好了. 如果需要直接转为视频则只能输出avi, 编码也只能选未压缩. 不过众所周知, 未压缩的avi视频相当大, 如果您只是需要分享则最好输出exe, 输出文件大小和源文件几乎一致. (我猜是把一个播放器和bik打包在一起了)
 
-![RAD Convert Menu](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Menu.Convert.png)
+![RAD Convert Menu](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Menu.Convert.png)
 
-![RAD Convert Select Codec](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Menu.SetCodec.png)
+![RAD Convert Select Codec](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Menu.SetCodec.png)
 
-![RAD Converting](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Convert.Processing.png)
+![RAD Converting](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Convert.Processing.png)
 
-![RAD Converted](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Convert.Done.png)
+![RAD Converted](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Convert.Done.png)
 
-![RAD Advanced Play Menu](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Menu.AdvancedPlay.png)
+![RAD Advanced Play Menu](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Menu.AdvancedPlay.png)
 
 &emsp;&emsp;你问能不能用现代的编码器? 醒醒, Bink 1不支持外部编码器, 而现代的Bink 2 SDK是付费、商业用的……
 
 &emsp;&emsp;"那其它内置的编码器不能用🐎?" 在, 看看关于? 上世纪的编码器您敢用? 即便使用, 输出的文件也会有一车问题. 是FFmpeg重新编码不香吗? 但这个我就不赘述了.
 
-![RAD Grandpa Codec](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.GrandpaCodec.png)
+![RAD Grandpa Codec](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.GrandpaCodec.png)
 
 &emsp;&emsp;不过R2SI 2020的序言CGI是个例外, 即便输出raw avi也会出现诡异的时间轴和采样问题. 但将每一帧输出为图片则没有问题……
 
-![RAD Weird Ouput](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.CGI.y4s4_overview.RadTransGlitch.png)
+![RAD Weird Ouput](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.CGI.y4s4_overview.RadTransGlitch.png)
 
 &emsp;&emsp;鬼知道未来还会不会出现这种问题, 而且方便传播的视频谁不爱呢? 因此我认为需要一个备用方案, 所以该FFmpeg登场了.
 
@@ -119,7 +120,7 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 &emsp;&emsp;接下来使用RAD VT的转换功能, 设置RAD VT的输出为png以保持无损, 选好输出目录与输出名字, 开始转换. 视频的每一帧将自动输出为png图片, 并在文件名最后自动加上帧数号(帧数号含前缀0).
 
-![RAD Pic Output List](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/RADVT.Output.Pics.png)
+![RAD Pic Output List](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/RADVT.Output.Pics.png)
 
 &emsp;&emsp;假定你已经配置好了FFmpeg, 可以使用终端/命令行调用. 我们只需要调用ffmpeg/ffmpeg.exe
 
@@ -159,15 +160,15 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 &emsp;&emsp;这里是运行结果:
 
-![FFmpeg Encoding](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/FFmpeg.Encoding.png)
+![FFmpeg Encoding](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/FFmpeg.Encoding.png)
 
-![FFmpeg Done](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/FFmpeg.Done.png)
+![FFmpeg Done](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/FFmpeg.Done.png)
 
 &emsp;&emsp;如果操作过程中不出错, 成品应该会出现在你指定的位置.
 
 &emsp;&emsp;下面便是是成品. 注意, 为了能塞进CDN, 我把成品转为了gif并降低了分辨率和帧率.
 
-![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
+![y5s1_opsunlock_bundle_dynamic](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.CGI.y5s1_opsunlock_bundle_dynamic.360P10FPS.gif)
 
 &emsp;&emsp;如需添加音轨, 再在第一个-i后添加另一个-i开关并输入音频, 接着对音频使用copy编码就行了. 其它高级玩法请自行查阅FFmpeg手册.
 
@@ -192,7 +193,7 @@ tags: [游戏, 彩虹六号, 逆向, 教程, RAD Video Tools, QuickBMS]
 
 &emsp;&emsp;这里是Y5S1.0文件列表示例:
 
-![Y5S1.0 Sounddata](https://cdn.infi.wang/pic/blog/R6S-Tutorial-ExtractCgiAndSound/R6S.Y5S1_0.sounddata.png)
+![Y5S1.0 Sounddata](https://cdn.infi.wang/pic/blog/r6s-datamine-guide/R6S.Y5S1_0.sounddata.png)
 
 &emsp;&emsp;将.pck拆开后会发现子文件有四种扩展名. 这里给出对应编码和主要存储内容:
 
