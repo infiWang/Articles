@@ -3,7 +3,7 @@ name: Hexo /source CI Trigger
 on: 
   push:
     branches: 
-      - master
+      - main
 
 jobs:
   build:
