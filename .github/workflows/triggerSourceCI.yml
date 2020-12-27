@@ -1,6 +1,7 @@
 name: Hexo /source CI Trigger
 
 on: 
+  workflow_dispatch:
   push:
     branches: 
       - main
